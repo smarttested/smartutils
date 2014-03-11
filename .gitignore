@@ -1,0 +1,14 @@
+#Ignore Eclipse project files
+target/
+bin/
+.metadata
+.settings
+.project
+.classpath
+.springBeans
+.checkstyle
+test-output
+*.log
+/*/**/.gitignore
+
+
