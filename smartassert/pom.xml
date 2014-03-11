@@ -19,18 +19,12 @@
 			<id>avarabyeu</id>
 			<name>Andrei Varabyeu</name>
 			<email>andrei.varabyeu@gmail.com</email>
-			<organization>${organization.name}</organization>
 			<roles>
 				<role>owner</role>
 				<role>developer</role>
 			</roles>
 		</developer>
 	</developers>
-
-	<properties>
-		<organization.name>SmartTested</organization.name>
-		<inception.year>2014</inception.year>
-	</properties>
 
 	<dependencies>
 		<dependency>
