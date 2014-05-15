@@ -15,29 +15,28 @@
  */
 package com.smarttested.qa.smartassert;
 
+import com.google.common.base.Predicates;
+import com.smarttested.qa.smartassert.SmartAssert;
+import com.smarttested.qa.smartassert.SoftAssertException;
+import com.smarttested.qa.smartassert.testng.SoftValidationMethodListener;
 import org.testng.SkipException;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.google.common.base.Predicates;
-import com.smarttested.qa.smartassert.testng.SoftValidationMethodListener;
-
 /**
- * 
  * @author Andrei Varabyeu
- * 
  */
 @Listeners(SoftValidationMethodListener.class)
-public class SofrValidationMethodListenerTest {
+public class SoftValidationMethodListenerTest {
 
-	/**
-	 * Validates that if test expects soft assertions error, it should be
-	 * skipped
-	 */
-	@Test(expectedExceptions = { SoftAssertException.class, SkipException.class })
-	public void testGuavaSoft() {
-		SmartAssert.expect(true, Predicates.alwaysFalse(), "I'm an error!").assertSoft();
-		SmartAssert.expect(true, Predicates.alwaysFalse(), "it's ok").assertSoft();
-		SmartAssert.expect(true, Predicates.alwaysFalse(), "I'm an second error!").assertSoft();
-	}
+    /**
+     * Validates that if test expects soft assertions error, it should be
+     * skipped
+     */
+    @Test(expectedExceptions = {SoftAssertException.class, SkipException.class})
+    public void testGuavaSoft() {
+        SmartAssert.expect(true, Predicates.alwaysFalse(), "I'm an error!").assertSoft();
+        SmartAssert.expect(true, Predicates.alwaysFalse(), "it's ok").assertSoft();
+        SmartAssert.expect(true, Predicates.alwaysFalse(), "I'm an second error!").assertSoft();
+    }
 }
