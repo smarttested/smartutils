@@ -1,4 +1,4 @@
-package com.smarttested.didemo.jdk8;
+package com.smarttested.qa.smartutils.jdk8;
 
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -35,7 +35,12 @@ public final class FunctionalConverter {
      * @return JDK8 {@link java.util.function.Function}
      */
     public static <T, R> Function<T, R> asJdk(com.google.common.base.Function<T, R> function) {
-        return (t -> function.apply(t));
+        return (new Function<T, R>() {
+            @Override
+            public R apply(T t) {
+                return function.apply(t);
+            }
+        });
     }
 
     /**
